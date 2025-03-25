@@ -1,0 +1,13 @@
+# Core dependencies
+numpy>=1.21.0
+biopython>=1.79
+pandas>=1.3.0  # for data handling
+jinja2>=3.0.0  # for HTML template rendering
+
+# Development dependencies
+pytest>=7.0.0
+black>=22.0.0
+isort>=5.0.0
+mypy>=0.900
+
+# Note: ipsae library is installed from local directory 

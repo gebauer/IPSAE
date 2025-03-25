@@ -1,0 +1,17 @@
+README.md
+setup.py
+ipsae/__init__.py
+ipsae.egg-info/PKG-INFO
+ipsae.egg-info/SOURCES.txt
+ipsae.egg-info/dependency_links.txt
+ipsae.egg-info/requires.txt
+ipsae.egg-info/top_level.txt
+ipsae/core/__init__.py
+ipsae/core/calculator.py
+ipsae/core/parser.py
+ipsae/core/utils.py
+ipsae/models/__init__.py
+ipsae/models/data_models.py
+ipsae/visualization/__init__.py
+ipsae/visualization/molstar.py
+tests/__init__.py

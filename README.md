@@ -1,10 +1,115 @@
-# IPSAE
-Scoring function for interprotein interactions in AlphaFold2 and AlphaFold3
+# IPSAE Project
 
-# Installation
-Simply download the Python script ipsae.py. It may be necessary to install the Python numpy package with:
+This repository contains both the IPSAE library for scoring interprotein interactions and analysis scripts for batch processing and visualization.
 
-    pip install numpy
+## Project Structure
+
+```
+ipsae/
+├── library/           # The IPSAE library
+│   ├── ipsae/        # Library code
+│   ├── tests/        # Library tests
+│   └── setup.py      # Library setup
+├── analysis/         # Analysis scripts
+│   ├── scripts/      # Analysis scripts
+│   ├── tests/        # Script tests
+│   └── requirements.txt
+├── docs/            # Combined documentation
+├── examples/        # Example usage
+└── README.md       # This file
+```
+
+## Components
+
+### IPSAE Library
+The core library for calculating IPSAE scores. See [library/README.md](library/README.md) for details.
+
+### Analysis Scripts
+Scripts for batch processing and visualization. See [analysis/README.md](analysis/README.md) for details.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ipsae.git
+   cd ipsae
+   ```
+
+2. Install the library:
+   ```bash
+   cd library
+   pip install -e .
+   ```
+
+3. Install analysis dependencies:
+   ```bash
+   cd ../analysis
+   pip install -r requirements.txt
+   ```
+
+## Development
+
+1. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. Install development dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run tests:
+   ```bash
+   pytest
+   ```
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Authors and Contributors
+
+### Original IPSAE Algorithm and Implementation
+- Roland Dunbrack (Fox Chase Cancer Center) - Original algorithm, implementation, and intellectual contribution
+
+### Code Refactoring and Extensions
+- Jan Gebauer (University of Cologne) - [Refactoring] Library development, MolStar integration, and visualization tools
+
+## Features
+
+- Calculate IPSAE scores for protein-protein interactions
+- Support for AlphaFold2 and AlphaFold3 output formats
+- Chain-chain and residue-level scoring
+- Integration with MolStar for structure visualization
+- Comprehensive HTML report generation
+
+## Usage
+
+Basic usage:
+
+```python
+from ipsae.core.calculator import IPSAECalculator
+
+# Initialize calculator
+calculator = IPSAECalculator(
+    pae_file_path="path/to/pae.json",
+    structure_file_path="path/to/structure.cif",
+    pae_cutoff=15,
+    dist_cutoff=15
+)
+
+# Calculate scores
+results = calculator.calculate()
+
+# Access results
+chain_chain_scores = results.chain_chain_scores
+residue_scores = results.residue_scores
+structure_data = results.structure_data
+```
+
+For detailed usage examples and documentation of all available parameters, see the [Documentation](#) section.
 
 # Usage:                                                                                                                                                                                                     
 AlphaFold2:

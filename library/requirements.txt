@@ -1,0 +1,6 @@
+numpy>=1.21.0
+biopython>=1.79
+pytest>=7.0.0  # for testing
+black>=22.0.0  # for code formatting
+isort>=5.0.0   # for import sorting
+mypy>=0.900    # for type checking
